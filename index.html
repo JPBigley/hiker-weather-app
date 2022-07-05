@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <Title>Hiker's App</Title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-
-    <body>
-        <h1>Hiker app</h1>
-
-        <h2 id="weaterapi"></h2>
-
-        <input type="text" id="zip">
-
-        <div class="1st" id="close-hike">
-            <!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
-            <img src="" alt="Pretty picture 1">
-        </div>
-
-        <div class="2nd" id="2nd-hike">
-             <!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
-            <img src="" alt="Pretty picture 2">
-        </div>
-
-        <div class="3rd" id="3-hike">
-             <!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
-            <img src="" alt="Pretty picture 3">
-        </div>
- 
-        <script src="./assets/js/script.js"></script>
-
-    </body>
+	<head>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Hiker's App</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<!--Workspace below-->
+	<body class="text-amber-300 bg-gradient-to-b from-amber-900 to-amber-400">
+		<div class="center">
+			<div class="text-sm hover:text-base p-3">
+				<a href="a">Popular Hikes</a>
+				<a href="a">Weekly Weather</a>
+			</div>
+			<div>
+				<h1 class="font-serif text-4xl font-semibold p-4">Plan Your Hike</h1>
+				<h2 id="weaterapi">Where you going?</h2>
+				<input type="text" id="zip" />
+				<h2 class="pb-12"></h2>
+			</div>
+			<p class="tracking-wide pb-5">
+				Plan Your Hike is your one stop page to help planning your next trail easier. This application provides the weather and directions to your nearby trails. Grab the sunscreen and see you on the
+				path!
+			</p>
+			<div class="row">
+				<div class="column">
+					<div class="1st" id="close-hike">
+						<!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
+						<img src="hikingdogs.jpg" alt="three dogs posing" width="200" height="200" />
+					</div>
+				</div>
+				<div class="column">
+					<div class="2nd" id="2nd-hike">
+						<!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
+						<img src="birds.jpg" alt="Birds flying over cliff" width="200" height="225" />
+					</div>
+				</div>
+				<div class="column">
+					<div class="3rd" id="3-hike">
+						<!-- <h1 class= "1st-header" id="nearest-hike/distance"></h1> -->
+						<img src="bridge.jpg" alt="Bridge in Hocking Hills" width="200" height="225" />
+					</div>
+				</div>
+			</div>
+			<script src="./assets/js/script.js"></script>
+		</div>
+	</body>
 </html>
