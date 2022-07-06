@@ -5,24 +5,8 @@ var searchCityButton = $("#search-city-button");
 var apiKey = "377d677ec9c51941e2b7d5548195ff39";
 var apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 
-// Hitting enter while input is focused will trigger
-// value added to search history
-$(searchCityButton).on("submit", function () {
-	event.preventDefault();
-
-	// Grab value entered into search bar
-	var searchValue = searchCityInput.val().trim();
-
-	currentConditionsRequest(searchValue);
-	searchCityInput.val("");
-});
-
-// Clicking the search button will trigger
-// value added to search history
 searchCityButton.on("click", function (event) {
 	event.preventDefault();
-
-	// Grab value entered into search bar
 	var searchValue = searchCityInput.val().trim();
 	currentConditionsRequest(searchValue);
 	searchCityInput.val("");
