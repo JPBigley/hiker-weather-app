@@ -4,24 +4,21 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>Hiker's App</title>
 		<link rel="stylesheet" href="style.css" />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous">
-              </script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<style>
-	.column {
-		float: left;
-		width: 33.33%;
-		padding: 5px;
-		}
-	.row::after {
-		content: "";
-		clear: both;
-		display: table;
-		}
-	.center {
-		text-align: center;
-		}
+			.column {
+				float: left;
+				width: 33.33%;
+				padding: 5px;
+			}
+			.row::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+			.center {
+				text-align: center;
+			}
 		</style>
 	</head>
 	<!--Workspace below-->
@@ -37,6 +34,8 @@
 				<input type="text" id="zip" />
 				<h2 class="pb-12"></h2>
 			</div>
+			<h3>Weather For Your Hike</h3>
+			<div id="weather-results"></div>
 			<p class="tracking-wide pb-5">
 				Plan Your Hike is your one stop page to help planning your next trail easier. This application provides the weather and directions to your nearby trails. Grab the sunscreen and see you on the
 				path!
