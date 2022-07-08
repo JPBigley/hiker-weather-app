@@ -10,8 +10,9 @@ searchCityButton.on("click", function (event) {
 	event.preventDefault();
 	var city = searchCityInput.val();
 	var queryUrl = apiUrl + city + "&appid=" + apiKey;
-    var parkqueryUrl = 'https://developer.nps.gov/api/v1/parks?limit=467&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL&q="city:' + city +'"';
-	$.ajax({
+    var parkqueryUrl = `https://developer.nps.gov/api/v1/parks?limit=467&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL&q="city: ${city}"`;
+	console.log(parkqueryUrl)
+    $.ajax({
 		url: queryUrl,
 		method: "GET",
 	}).then(function (response) {
@@ -32,21 +33,21 @@ $.ajax({
 
 })
   .then(function (parkResponse){
-    var parkName = parkResponse.data[0].fullName
-    var parkName2 = parkResponse.data[1].fullName
-    var parkName3 = parkResponse.data[2].fullName
-    var parkDescription = parkResponse.data[0].description
-    var parkDescription2 = parkResponse.data[1].description
-    var parkDescription3 = parkResponse.data[2].description
-    var parkResults = $('#close-hike');
-    var parkResults2 = $('#2nd-hike');
-    var parkResults3 = $('#3-hike"');
-    parkResults.empty();
-    parkResults.append("<p>Name: " +parkName, "<p>" + "<p>Description:" +parkDescription);
-    parkResults2.empty();
-    parkResults2.append("<p>Name: " +parkName2, "<p>" + "<p>Description:" +parkDescription2);
-    parkResults3.empty();
-    parkResults3.append("<p>Name: " +parkName3, "<p>" + "<p>Description:" +parkDescription3);
+       console.log(parkResponse)
+    let i=0;
+    Object.values(parkResponse.data).map((data1)=> {
+      console.log(data1)
+        if (i===0){
+            $('#close-hike').append("<p>Name: " +data1.fullName, "<p>" + "<p>Description:" +data1.description)
+        } else if (i===1){
+            $('#2nd-hike').append("<p>Name: " +data1.fullName, "<p>" + "<p>Description:" +data1.description)
+        }
+        else if (i===2){
+            $('#3-hike"').append("<p>Name: " +data1.fullName, "<p>" + "<p>Description:" +data1.description)
+        }
+
+        i+=1
+    })
 
 })
 	});
