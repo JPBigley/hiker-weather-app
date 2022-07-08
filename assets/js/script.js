@@ -10,6 +10,7 @@ searchCityButton.on("click", function (event) {
 	event.preventDefault();
 	var city = searchCityInput.val();
 	var queryUrl = apiUrl + city + "&appid=" + apiKey;
+    var parkqueryUrl = 'https://developer.nps.gov/api/v1/parks?limit=467&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL&q=<"city:' +city +'">';
 	$.ajax({
 		url: queryUrl,
 		method: "GET",
@@ -24,20 +25,29 @@ searchCityButton.on("click", function (event) {
 		weatherResults.empty();
 		// append the city name, temperature, weather description, and weather icon to the weather results div
 		weatherResults.append("<p>City: " + cityName + "</p>" + "<p>Temperature: " + tempF + "&#xb0;</p>" + "<p>Conditions: " + weatherDesc + "</p>" + "<p><img src=" + weatherIconUrl + "></p>");
+             
+$.ajax({
+    url: parkqueryUrl,
+    method: 'GET',
+
+}).then(function (parkResponse){
+    var parkName = parkResponse.data[0].fullName
+    var parkName2 = parkResponse.data[1].fullName
+    var parkName3 = parkResponse.data[2].fullName
+    var parkDescription = parkResponse.data[0].description
+    var parkDescription2 = parkResponse.data[1].description
+    var parkDescription3 = parkResponse.data[2].description
+    var parkResults = $('#close-hike');
+    var parkResults2 = $('#2nd-hike');
+    var parkResults3 = $('#3-hike"');
+    parkResults.empty();
+    parkResults.append("<p>Name: " +parkName, "<p>" + "<p>Description:" +parkDescription);
+    parkResults2.empty();
+    parkResults2.append("<p>Name: " +parkName2, "<p>" + "<p>Description:" +parkDescription2);
+    parkResults3.empty();
+    parkResults3.append("<p>Name: " +parkName3, "<p>" + "<p>Description:" +parkDescription3);
+
+})
 	});
 });
 
-var weatherURL = "";
-var parkURL = "https://developer.nps.gov/api/v1/parks?limit=1&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL";
-
-function getParkURL() {
-	fetch("https://developer.nps.gov/api/v1/parks?limit=1&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL")
-		.then((response) => response.json())
-		.then((data) => {
-			console.log(data.data[0].fullName);
-			console.log(data.data[0].latitude);
-			console.log(data.data[0].longitude);
-		});
-}
-
-getParkURL();
