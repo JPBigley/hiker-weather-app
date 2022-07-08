@@ -10,7 +10,7 @@ searchCityButton.on("click", function (event) {
 	event.preventDefault();
 	var city = searchCityInput.val();
 	var queryUrl = apiUrl + city + "&appid=" + apiKey;
-    var parkqueryUrl = 'https://developer.nps.gov/api/v1/parks?limit=467&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL&q=<"city:' +city +'">';
+    var parkqueryUrl = 'https://developer.nps.gov/api/v1/parks?limit=467&api_key=8rhE0zKdQhsoe0lbFkVxuqBk1zLZwzeuwo3D1MXL&q="city:' + city +'"';
 	$.ajax({
 		url: queryUrl,
 		method: "GET",
@@ -30,7 +30,8 @@ $.ajax({
     url: parkqueryUrl,
     method: 'GET',
 
-}).then(function (parkResponse){
+})
+  .then(function (parkResponse){
     var parkName = parkResponse.data[0].fullName
     var parkName2 = parkResponse.data[1].fullName
     var parkName3 = parkResponse.data[2].fullName
