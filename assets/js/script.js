@@ -53,11 +53,22 @@ searchCityButton.on("click", function (event) {
 				} else if (i === 1) {
 					$("#2nd-hike").append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
 				} else if (i === 2) {
-					$('#3-hike"').append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
+					$("#3-hike").append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
 				}
-
+                
 				i += 1;
 			});
+                
+       
+                
+                
 		});
 	});
 });
+                
+
+         
+    
+                    
+           
+            
