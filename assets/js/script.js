@@ -28,13 +28,13 @@ searchCityButton.on("click", function (event) {
 		weatherResults.append(
 			"<p><strong>City:</strong> " +
 				cityName +
-				"</p>" +
+				"&nbsp; | &nbsp;</p>" +
 				"<p><strong>Temperature:</strong> " +
 				tempF +
-				"&#xb0;</p>" +
+				"&#xb0; &nbsp; | &nbsp;</p>" +
 				"<p><strong>Conditions:</strong> " +
 				weatherDesc +
-				"</p>" +
+				"&nbsp; | &nbsp;</p>" +
 				"<p><img src=" +
 				weatherIconUrl +
 				"></p>"
