@@ -49,11 +49,11 @@ searchCityButton.on("click", function (event) {
 			Object.values(parkResponse.data).map((data1) => {
 				console.log(data1);
 				if (i === 0) {
-					$("#close-hike").append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
+					$("#close-hike").append("<p> " + data1.fullName, "<p>" + "<p>" + data1.description);
 				} else if (i === 1) {
-					$("#2nd-hike").append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
+					$("#2nd-hike").append("<p> " + data1.fullName, "<p>" + "<p>" + data1.description);
 				} else if (i === 2) {
-					$("#3-hike").append("<p>Name: " + data1.fullName, "<p>" + "<p>Description:" + data1.description);
+					$("#3-hike").append("<p> " + data1.fullName, "<p>" + "<p>" + data1.description);
 				}
                 
 				i += 1;
